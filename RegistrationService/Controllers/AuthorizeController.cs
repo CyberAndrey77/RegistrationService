@@ -1,6 +1,8 @@
 ﻿using RegistrationService.Models;
-using RegistrationService.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using RegistrationService.Services.Interface;
 
 namespace RegistrationService.Controllers
 {
@@ -8,14 +10,17 @@ namespace RegistrationService.Controllers
     [ApiController]
     public class AuthorizeController : ControllerBase
     {
-        private readonly IAuthorizationService _authorization;
+        private readonly Services.Interface.IAuthorizationService _authorization;
         private readonly IVerifyService _verifyService;
         private readonly IPasswordService _passwordService;
-        public AuthorizeController(IAuthorizationService authorization, IVerifyService verifyService, IEmailService emailService, IPasswordService passwordService)
+        //private readonly ISendMessageService _sendMessageService;
+        public AuthorizeController(Services.Interface.IAuthorizationService authorization, 
+            IVerifyService verifyService, IPasswordService passwordService)
         {
             _authorization = authorization;
             _verifyService = verifyService;
             _passwordService = passwordService;
+            //_sendMessageService = sendMessageService;
         }
 
         [HttpPost("login")]
@@ -102,5 +107,21 @@ namespace RegistrationService.Controllers
                 return BadRequest(new DataTokens() { AccessToken = string.Empty, RefreshToken = string.Empty, ErrorMessage = ex.Message });
             }
         }
+
+        //[HttpPost("send-message")]
+        //public async Task<IActionResult> RemoveAccount(MessageModel model)
+        //{
+        //    try
+        //    {
+        //        var answer = await _sendMessageService.SendMessage(model.Message);
+
+        //        return Ok(answer);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
+
     }
 }

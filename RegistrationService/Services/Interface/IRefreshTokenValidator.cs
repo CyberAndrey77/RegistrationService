@@ -1,4 +1,4 @@
-﻿namespace RegistrationService.Services
+﻿namespace RegistrationService.Services.Interface
 {
     /// <summary>
     /// Интерфейс для проверки валидности токена перевыпуска.

@@ -1,4 +1,4 @@
-﻿namespace RegistrationService.Services
+﻿namespace RegistrationService.Services.Interface
 {
     public interface IEmailService
     {

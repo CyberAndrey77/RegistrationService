@@ -1,5 +1,6 @@
 ﻿using MailKit.Net.Smtp;
 using MimeKit;
+using RegistrationService.Services.Interface;
 
 namespace RegistrationService.Services
 {

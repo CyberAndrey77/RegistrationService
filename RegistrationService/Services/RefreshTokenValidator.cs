@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using RegistrationService.Models;
+using RegistrationService.Services.Interface;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 

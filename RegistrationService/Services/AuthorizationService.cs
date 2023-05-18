@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RegistrationService.Models;
+using RegistrationService.Services.Interface;
 using System.Security.Cryptography;
 
 namespace RegistrationService.Services
@@ -36,6 +37,11 @@ namespace RegistrationService.Services
             {
                 throw new ArgumentException("Неверная почта или пароль");
             }
+
+            //if (!user.IsVerification)
+            //{
+            //    throw new ArgumentException("Почта не подверждена!");
+            //}
 
             var refreshToken = _refreshTokenService.GenerateToken(user);
             await PutRefreshTokenInDB(user.Id, refreshToken);

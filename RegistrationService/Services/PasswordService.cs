@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RegistrationService.Models;
+using RegistrationService.Services.Interface;
 using System.Security.Cryptography;
 
 namespace RegistrationService.Services

@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace RegistrationService.Services
+namespace RegistrationService.Services.Interface
 {
     /// <summary>
     /// Интервейс для генерации токена.

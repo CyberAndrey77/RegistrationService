@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using RegistrationService.Models;
 using RegistrationService.Services;
+using RegistrationService.Services.Interface;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
@@ -38,6 +39,7 @@ builder.Services.AddScoped<ITokenGenerator, TokenGenerator>();
 builder.Services.AddScoped<IAccessTokenService, AccessTokenService>();
 builder.Services.AddScoped<IRefreshTokenService, RefreshTokenService>();
 builder.Services.AddScoped<IRefreshTokenValidator, RefreshTokenValidator>();
+//builder.Services.AddScoped<ISendMessageService, SendMessageService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>

@@ -1,4 +1,5 @@
 ﻿using RegistrationService.Models;
+using RegistrationService.Services.Interface;
 using System.Security.Claims;
 
 namespace RegistrationService.Services

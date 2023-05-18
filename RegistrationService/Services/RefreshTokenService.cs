@@ -1,4 +1,5 @@
 ﻿using RegistrationService.Models;
+using RegistrationService.Services.Interface;
 
 namespace RegistrationService.Services
 {

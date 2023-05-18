@@ -1,6 +1,6 @@
 ﻿using RegistrationService.Models;
 
-namespace RegistrationService.Services
+namespace RegistrationService.Services.Interface
 {
     /// <summary>
     /// Интерфейс для создания токенов.
